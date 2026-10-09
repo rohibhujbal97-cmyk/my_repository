@@ -1,1 +1,13 @@
-Hello
+version: 2.1
+ 
+jobs:
+  say-hello:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - run: echo "hello from y0 test"
+ 
+workflows:
+  y0-test:
+    jobs:
+      - say-hello
